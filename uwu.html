@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprawdzanie wieku</title>
+</head>
+<body>
+    <h1>Sprawdź swój wiek</h1>
+    <form id="ageForm">
+        <label for="age">Podaj swój wiek:</label>
+        <input type="number" id="age" name="age" required>
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('ageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const age = document.getElementById('age').value;
+            const resultDiv = document.getElementById('result');
+
+            if (age >= 18) {
+                resultDiv.textContent = "Jesteś pełnoletni";
+            } else {
+                resultDiv.textContent = "Jesteś niepełnoletni";
+            }
+        });
+    </script>
+</body>
+</html>
